@@ -55,12 +55,14 @@ def handle_sensor_data(data):
 
     stdnorm = StandardScaler()
 
-    data = np.array([[data["temperature"], data["humidity"], data["CO2"]]])
-    data = stdnorm.fit_transform(data)
+    data_arr = np.array([[float(data["temperature"]), float(data["humidity"]), float(data["CO2"])]])
+    # stdnorm.fit(data_arr)
+    # data_arr = stdnorm.transform(data_arr)
 
-    res = occupancy_model.predict(data, verbose=0)[0][0]
+    res = occupancy_model.predict(data_arr, verbose=0)[0][0]
     occupancy = True if res > OCCUPANCY_THRESHOLD else False
-    print(res)
+    print(data_arr)
+    print(data, res)
     
     socketio.emit("occupancy", occupancy)
 

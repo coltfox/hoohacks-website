@@ -47,9 +47,9 @@ export default function SensorStatus() {
         <Box gap={4} p={2} display="flex" flexWrap={"wrap"}>
             <StatusLabel label="Sensor Status" value={connectionStatus ? "Connected" : "Disconnected" } valueColor={connectionStatus ? GREEN : RED}/>
             <StatusLabel label="Occupancy" value={occupancy ? "Occupants detected" : "No occupants detected"} valueColor={occupancy ? GREEN : RED}/>
-            <StatusLabel label="Temperature" value={temp} valueColor={YELLOW}/>
-            <StatusLabel label="CO2" value={co2} valueColor={YELLOW}/>
-            <StatusLabel label="Humidity" value={humidity} valueColor={YELLOW}/>
+            <StatusLabel label="Temperature" units="K" value={temp} valueColor={YELLOW}/>
+            <StatusLabel label="CO2" units="PPM" value={co2} valueColor={YELLOW}/>
+            <StatusLabel label="Humidity" units="g/kg" value={humidity} valueColor={YELLOW}/>
         </Box>
     )
 }
