@@ -1,5 +1,3 @@
-import Box from '@mui/material/Box';
-
 interface StatusLabelProps {
     label: string
     value: string

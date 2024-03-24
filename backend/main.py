@@ -1,9 +1,7 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
-import random
 import threading
-import math
 import numpy as np
 import time
 

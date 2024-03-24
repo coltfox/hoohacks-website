@@ -1,8 +1,7 @@
-// import { useEffect } from "./react";
 import Box from '@mui/material/Box';
 import StatusLabel from './StatusLabel';
-import socket from '../socket'
-import { useEffect, useState } from 'react'
+import socket from '../socket';
+import { useEffect, useState } from 'react';
 
 const GREEN = "#0be881"
 const RED = "#ff3f34"
@@ -39,11 +38,11 @@ export default function SensorStatus() {
     }, [])
 
     return (
-        <Box gap={8} p={2} sx={{display: 'flex', marginBottom: '2em'}}>
+        <Box gap={4} p={2} display="flex" flexWrap={"wrap"}>
             <StatusLabel label="Sensor Status" value={connectionStatus ? "Connected" : "Disconnected" } valueColor={connectionStatus ? GREEN : RED}/>
             <StatusLabel label="Occupancy" value={occupancy ? "Occupants detected" : "No occupants detected"} valueColor={occupancy ? GREEN : RED}/>
-            <StatusLabel label="Temperature" value={temp} valueColor={YELLOW}/>
-            <StatusLabel label="Light" value={light} valueColor={YELLOW}/>
+            <StatusLabel label="Temperature" value={temp.toString()} valueColor={YELLOW}/>
+            <StatusLabel label="Light" value={light.toString()} valueColor={YELLOW}/>
         </Box>
     )
 }

@@ -1,21 +1,17 @@
-import Counter from './components/Counter'
 import ToggleColorMode from './components/ToggleColorMode';
 import useSocketSetup from "./useSocketSetup"
-import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
-import { createContext, useContext, useMemo, useState } from "react"
-// import TemperatureChart from "./components/TemperatureChart"
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createContext, useMemo, useState } from "react"
 import LiveChart from './components/LiveChart';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import SensorStatus from './components/SensorStatus';
 import { Grid } from '@mui/material';
-import { amber, deepOrange, grey } from '@mui/material/colors';
-import { PaletteMode } from '@mui/material';
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export default function App() {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('dark');
   
   const colorMode = useMemo(
     () => ({
@@ -31,8 +27,7 @@ export default function App() {
       createTheme({
         palette: {
           mode,
-        },
-      }),
+      }}),
     [mode],
   );
 
@@ -54,7 +49,7 @@ export default function App() {
             <ToggleColorMode/>
             {/* <Counter/> */}
             <SensorStatus />
-            <Grid container columns={4}>
+            <Grid marginTop="2em" container columns={4}>
               <LiveChart title="Temperature" dataKey="temperature"/>
               <LiveChart title="Light" dataKey="light"/>
               <LiveChart title="CO2" dataKey="co2"/>

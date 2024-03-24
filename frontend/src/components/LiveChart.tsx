@@ -10,7 +10,7 @@ interface LiveChartProps {
 
 export default function LiveChart(props: LiveChartProps) {
     const [times, setTimes] = useState([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
-    const [lastTime, setLastTime] = useState(new Date());
+    const [lastTime, setLastTime] = useState(new Date().getTime());
     const [yAxis, setYAxis] = useState([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function LiveChart(props: LiveChartProps) {
             newYAxis.shift();
             newYAxis.push(data[props.dataKey])
 
-            let currentTime = new Date();
+            let currentTime = new Date().getTime();
             let secs = Math.round((currentTime - lastTime) / 1000)
             let newTimes = times;
             newTimes.shift()
