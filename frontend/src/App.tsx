@@ -54,6 +54,7 @@ export default function App() {
               <LiveChart title="Light" dataKey="light"/>
               <LiveChart title="CO2" dataKey="co2"/>
               <LiveChart title="Humidity" dataKey="humidity"/>
+              <LiveChart title="Volatile Organic Compounds" dataKey="voc"/>
             </Grid>
           </Box>
         </ThemeProvider>

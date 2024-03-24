@@ -17,36 +17,15 @@ temp_axis_values = [0.0] * 6
 def rand_float():
     return round(100 * abs(np.random.normal()), 3)
 
-def shift_all_to_the_left(array):
-    for index, element in enumerate(array):
-        if index == len(array)-1:
-            continue
-        array[index] = array[index+1]
-    return array
-
-def get_axis_values(new_value, old_list):
-    new_list = shift_all_to_the_left(old_list)
-    new_list[-1] = new_value
-    
-    return new_list
-
 def generate_sample_data():
-    time_elapsed = round(time.time() - start, 3)
-    temp = rand_float()
-
-    # time_elapsed_axis_values = get_axis_values(time_elapsed, time_elapsed_axis_values)
-    # temp_axis_values = get_axis_values(temp, temp_axis_values)
-
-
     return {
         "room_name": "room",
         "bluetooth_address": 0,
-        "temperature": temp,
+        "temperature": rand_float(),
         "light": rand_float(),
         "co2": rand_float(),
         "humidity": rand_float(),
-        # "time_elapsed": time_elapsed_axis_values,
-        # "temp_axis_values": temp_axis_values,
+        "voc": rand_float(),
         "occupancy": 1
     }
 
