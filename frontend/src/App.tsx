@@ -51,7 +51,6 @@ export default function App() {
             <SensorStatus />
             <Grid marginTop="2em" container columns={4}>
               <LiveChart title="Temperature" dataKey="temperature"/>
-              <LiveChart title="Light" dataKey="light"/>
               <LiveChart title="CO2" dataKey="co2"/>
               <LiveChart title="Humidity" dataKey="humidity"/>
               <LiveChart title="Volatile Organic Compounds" dataKey="voc"/>

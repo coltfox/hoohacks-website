@@ -19,10 +19,7 @@ def rand_float():
 
 def generate_sample_data():
     return {
-        "room_name": "room",
-        "bluetooth_address": 0,
         "temperature": rand_float(),
-        "light": rand_float(),
         "co2": rand_float(),
         "humidity": rand_float(),
         "voc": rand_float(),
