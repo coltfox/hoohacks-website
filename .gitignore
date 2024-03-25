@@ -26,4 +26,3 @@ dist-ssr
 # Backend
 .env
 __pycache__
-*.keras
